@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  php:
+    image: php:8.2-cli
+    container_name: my_php_app
+    volumes:
+      - ./index.php:/var/www/html/index.php
+    working_dir: /var/www/html
+    command: php -S 0.0.0.0:8000
+    ports:
+      - "8000:8000"
